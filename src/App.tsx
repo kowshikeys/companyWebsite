@@ -1,16 +1,15 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import Hero from "./components/Hero";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Routes, Route } from "react-router-dom";
+import Blog from "./components/Blog";
 
 const App: React.FC = () => {
   return (
-    <div className="app-wrapper">
-      <Header />
+    <div className="app">
       <Hero />
-      <Footer />
+      {/* <Routes>
+        <Route path="/blog" element={<Blog />} />
+      </Routes> */}
     </div>
   );
 };

@@ -1,47 +1,38 @@
 @font-face {
-  font-family: "Gilroy-Bold";
-  src: url("../src/assets/fonts/Gilroy-Bold.ttf");
+  font-family: "Walkway-Black";
+  src: url("../src//assets/fonts/Walkway_Black.ttf");
 }
 @font-face {
-  font-family: "Gilroy-Medium";
-  src: url("../src/assets/fonts/Gilroy-Medium.ttf");
+  font-family: "Walkway-Bold";
+  src: url("../src//assets/fonts/Walkway_Bold.ttf");
 }
 @font-face {
-  font-family: "Gilroy-SemiBold";
-  src: url("../src/assets/fonts/Gilroy-SemiBold.ttf");
+  font-family: "Walkway-SemiBold";
+  src: url("../src//assets/fonts/Walkway_SemiBold.ttf");
 }
 @font-face {
-  font-family: "Gilroy-Light";
-  src: url("../src/assets/fonts/Gilroy-Light.ttf");
-}
-
-:root {
-  --font-bold: "Gilroy-Bold";
-  --font-medium: "Gilroy-Medium";
-  --font-semiBold: "Gilroy-SemiBold";
-  --font-light: "Gilroy-Light";
+  font-family: "Walkway-UltraBold";
+  src: url("../src//assets/fonts/Walkway_UltraBold.ttf");
 }
 
 *,
-::after,
-::before {
+::before,
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--font-medium);
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  color: var(--text-primary);
-  transition: all 0.3s linear;
+  font-family: "Walkway-Black";
+  background: #fffbf6;
 }
 
-.app-wrapper {
+.app {
+  padding: 20px;
   height: 100vh;
+  max-width: 55%;
+  margin: 0 auto;
   overflow: hidden;
-}
-.pad {
-  padding: 20px 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
