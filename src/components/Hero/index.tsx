@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../Header";
-import Image from "../../assets/images/Hero.png";
 import Text1 from "../../assets/images/Handheld..svg";
 import Text2 from "../../assets/images/All the way..svg";
 import "./Hero.scss";
@@ -11,6 +9,7 @@ import "../Header/Header.scss";
 import { Link } from "react-router-dom";
 import Blog from "../Blog";
 import Logohover from "../../assets/icons/Logohover.svg";
+import Loading from "../Loading";
 
 const Hero: React.FC = () => {
   const [isActive, setIsActive] = useState("About");
@@ -47,7 +46,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
       {isActive === "About" && (
-        <>
+        <div className="about-wrapper">
           <div className="hero-box">
             <div className="text">
               <img className="hand" src={Text1} alt="" />
@@ -55,8 +54,10 @@ const Hero: React.FC = () => {
             </div>
           </div>
           <p className="request">CLICK ANYWHERE TO DOWNLOAD COMPANY PROFILE</p>
-          <div className="img">{/* <img src={Image} alt="" /> */}</div>
-        </>
+          <div className="loading-content">
+            <Loading />
+          </div>
+        </div>
       )}
 
       {isActive === "Work" && (
