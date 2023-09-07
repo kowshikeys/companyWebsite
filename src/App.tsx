@@ -5,8 +5,13 @@ import Loading from "./components/Loading";
 
 const App: React.FC = () => {
   return (
-    <div className="app">
-      <Hero />
+    <div>
+      <section>
+        <div className="app">
+          <Hero />
+        </div>
+      </section>
+      <section style={{ backgroundColor: "turquoise" }}>footer</section>
       {/* <Routes>
         <Route path="/loading" element={<Loading />} />
       </Routes> */}

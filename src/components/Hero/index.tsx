@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
           </div>
           <p className="request">CLICK ANYWHERE TO DOWNLOAD COMPANY PROFILE</p>
           <div className="loading-content">
-            <Loading />
+            <Loading setIsActive={setIsActive} />
           </div>
         </div>
       )}

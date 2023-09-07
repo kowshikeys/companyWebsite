@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Loading.scss";
 
-const Loading: React.FC = () => {
+interface ILoading {
+  setIsActive: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const Loading: React.FC<ILoading> = ({ setIsActive }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [progressStartValue, setProgressStartValue] = useState(0);
   const progressValueRef = useRef<HTMLElement | null>(null);
@@ -39,10 +43,11 @@ const Loading: React.FC = () => {
 
   useEffect(() => {
     if (circleProgressRef.current) {
-      const conicGradient = `conic-gradient(grey ${
-        progressStartValue * 3.6
-      }deg, #ededed 0deg)`;
+      const conicGradient = `conic-gradient(grey ${progressStartValue * 3.6}deg, #ededed 0deg)`;
       circleProgressRef.current.style.background = conicGradient;
+    }
+    if (progressStartValue === 100) {
+      setIsActive("Work");
     }
   }, [progressStartValue]);
 
