@@ -10,6 +10,22 @@ import { Link } from "react-router-dom";
 import Blog from "../Blog";
 import Logohover from "../../assets/icons/Logohover.svg";
 import Loading from "../Loading";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  draggable: true,
+  fade: true,
+  cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
+  touchThreshold: 100,
+};
 
 const Hero: React.FC = () => {
   const [isActive, setIsActive] = useState("About");
@@ -64,9 +80,15 @@ const Hero: React.FC = () => {
         <>
           <div className="work-box">
             <div className="box1">
-              <div className="background"></div>
+              <div>
+                <Slider {...settings}>
+                  <div className="background"></div>
+                </Slider>
+              </div>
+
               <h5>OUR CLIENT</h5>
               <p>BEST SERVICE WE’RE EVER COME ACROSS</p>
+              <h5>BEST SERVICE WE’RE EVER COME ACROSS</h5>
             </div>
             <div className="box2"></div>
           </div>
