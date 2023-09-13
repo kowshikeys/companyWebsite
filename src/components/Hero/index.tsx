@@ -13,6 +13,10 @@ import Loading from "../Loading";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import All from "../../assets/images/All.svg";
+import The from "../../assets/images/the.svg";
+import Way from "../../assets/images/way.svg";
+import video from "../../assets/images/video.mp4";
 
 const settings = {
   dots: false,
@@ -21,10 +25,9 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  draggable: true,
-  fade: true,
   cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
   touchThreshold: 100,
+  arrows: false,
 };
 
 const Hero: React.FC = () => {
@@ -34,7 +37,7 @@ const Hero: React.FC = () => {
       <div className="header-wrapper">
         <div className="logo">
           <img className="logo1" src={Logo} alt="" />
-          <img className="logohover" src={Logohover} alt="" />
+          {/* <img className="logohover" src={Logohover} alt="" /> */}
         </div>
         <div className="navbar-content">
           <div
@@ -66,7 +69,11 @@ const Hero: React.FC = () => {
           <div className="hero-box">
             <div className="text">
               <img className="hand" src={Text1} alt="" />
-              <img className="way" src={Text2} alt="" />
+              <div className="flex">
+                <img className="way" src={All} alt="" />
+                <img className="way" src={The} alt="" />
+                <img className="way" src={Way} alt="" />
+              </div>
             </div>
           </div>
           <p className="request">CLICK ANYWHERE TO DOWNLOAD COMPANY PROFILE</p>
@@ -80,17 +87,52 @@ const Hero: React.FC = () => {
         <>
           <div className="work-box">
             <div className="box1">
-              <div>
-                <Slider {...settings}>
-                  <div className="background"></div>
-                </Slider>
+              <div className="slider-carousel">
+                {/* <Slider {...settings}>
+                  <div className="slider-card">
+                    <div className="background"></div>
+                  </div>
+                  <div className="slider-card">
+                    <div
+                      className="background"
+                      style={{ backgroundColor: "red" }}
+                    ></div>
+                  </div>
+                  <div className="slider-card">
+                    <div
+                      className="background"
+                      style={{ backgroundColor: "green" }}
+                    ></div>
+                  </div>
+                  <div className="slider-card">
+                    <div className="background"></div>
+                  </div>
+                </Slider> */}
               </div>
 
-              <h5>OUR CLIENT</h5>
-              <p>BEST SERVICE WE’RE EVER COME ACROSS</p>
-              <h5>BEST SERVICE WE’RE EVER COME ACROSS</h5>
+              {/* <h5>OUR CLIENT</h5> */}
+              <div className="slider-carousel">
+                <Slider {...settings}>
+                  <div className="slider-card-content">
+                    <p>BEST SERVICE WE’RE EVER COME ACROSS 1</p>
+                    <h5>BEST SERVICE WE’RE EVER COME ACROSS</h5>
+                  </div>
+                  <div className="slider-card-content">
+                    <p>BEST SERVICE WE’RE EVER COME ACROSS 2</p>
+                    <h5>BEST SERVICE WE’RE EVER COME ACROSS</h5>
+                  </div>
+                  <div className="slider-card-content">
+                    <p>BEST SERVICE WE’RE EVER COME ACROSS 3</p>
+                    <h5>BEST SERVICE WE’RE EVER COME ACROSS</h5>
+                  </div>
+                </Slider>
+              </div>
             </div>
-            <div className="box2"></div>
+            <div className="box2">
+              <video autoPlay loop muted>
+                <source src={video} type="video/mp4" />
+              </video>
+            </div>
           </div>
           <p className="request">CLICK ANYWHERE TO DOWNLOAD COMPANY PROFILE</p>
         </>

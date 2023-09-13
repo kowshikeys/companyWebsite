@@ -8,21 +8,6 @@
     .logo1 {
       width: 100px;
     }
-
-    .logohover {
-      width: 100px;
-      display: none;
-    }
-
-    &:hover {
-      .logo1 {
-        display: none;
-      }
-
-      .logohover {
-        display: flex;
-      }
-    }
   }
   .navbar-content {
     display: flex;
