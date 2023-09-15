@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Logo from "../../assets/icons/Logo.svg";
 import Moon from "../../assets/icons/moon.svg";
 import "./Header.scss";
@@ -6,7 +7,11 @@ import "./Header.scss";
 const Header: React.FC = () => {
   return (
     <>
-      <div className="header-wrapper">
+      <motion.div
+        // className="header-wrapper"
+        initial={{ opacity: 0, x: -10 }}
+        animate={{ opacity: 1, x: 0, transition: { duration: 5 } }}
+      >
         <div className="logo">
           <img className="logo" src={Logo} alt="" />
         </div>
@@ -23,7 +28,7 @@ const Header: React.FC = () => {
 
           <img src={Moon} alt="" />
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

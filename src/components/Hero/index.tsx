@@ -17,6 +17,7 @@ import All from "../../assets/images/All.svg";
 import The from "../../assets/images/the.svg";
 import Way from "../../assets/images/way.svg";
 import video from "../../assets/images/video.mp4";
+import { motion } from "framer-motion";
 
 const settings = {
   dots: false,
@@ -28,15 +29,20 @@ const settings = {
   cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
   touchThreshold: 100,
   arrows: false,
+  autoplaySpeed: 5000,
 };
 
 const Hero: React.FC = () => {
   const [isActive, setIsActive] = useState("About");
   return (
     <div className="hero-wrapper">
-      <div className="header-wrapper">
+      <motion.div
+        className="header-wrapper"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0, transition: { delay: 1, duration: 2 } }}
+      >
         <div className="logo">
-          <img className="logo1" src={Logo} alt="" />
+          <img className="logo1" src={Logohover} alt="" />
           {/* <img className="logohover" src={Logohover} alt="" /> */}
         </div>
         <div className="navbar-content">
@@ -63,23 +69,73 @@ const Hero: React.FC = () => {
 
           <img src={Moon} alt="" />
         </div>
-      </div>
+      </motion.div>
       {isActive === "About" && (
         <div className="about-wrapper">
-          <div className="hero-box">
-            <div className="text">
-              <img className="hand" src={Text1} alt="" />
-              <div className="flex">
-                <img className="way" src={All} alt="" />
-                <img className="way" src={The} alt="" />
-                <img className="way" src={Way} alt="" />
+          <motion.div
+            className="hero-box"
+            initial={{ opacity: 0, marginTop: "0" }}
+            animate={{ opacity: 1, marginTop: "20px", transition: { duration: 1 } }}
+          >
+            <motion.div
+              className="hero-box-bg"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { delay: 1 } }}
+            >
+              <div className="text">
+                <motion.img
+                  className="hand"
+                  src={Text1}
+                  alt=""
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { delay: 1.5 } }}
+                />
+                <div className="flex">
+                  <motion.img
+                    className="way"
+                    src={All}
+                    alt=""
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { delay: 1.8, duration: 1.5 } }}
+                  />
+                  <motion.img
+                    className="way"
+                    src={The}
+                    alt=""
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { delay: 2.2, duration: 1.5 } }}
+                  />
+                  <motion.img
+                    className="way"
+                    src={Way}
+                    alt=""
+                    style={{ marginTop: "15px" }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { delay: 2.6, duration: 1.5 } }}
+                  />
+                </div>
               </div>
-            </div>
-          </div>
-          <p className="request">CLICK ANYWHERE TO DOWNLOAD COMPANY PROFILE</p>
-          <div className="loading-content">
+            </motion.div>
+          </motion.div>
+          <motion.p
+            className="request"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0, transition: { delay: 1, duration: 2 } }}
+          >
+            CLICK ANYWHERE TO DOWNLOAD COMPANY PROFILE
+          </motion.p>
+          <motion.div
+            className="loading-content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 1 } }}
+          >
             <Loading setIsActive={setIsActive} />
-          </div>
+          </motion.div>
+          <motion.div
+            className="loader"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0, transition: { delay: 1 } }}
+          ></motion.div>
         </div>
       )}
 
