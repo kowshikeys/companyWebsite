@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Text1 from "../../assets/images/Handheld..svg";
 import Text2 from "../../assets/images/All the way..svg";
 import "./Hero.scss";
@@ -34,6 +34,22 @@ const settings = {
 
 const Hero: React.FC = () => {
   const [isActive, setIsActive] = useState("About");
+  const [showLoader, setShowLoader] = useState(false);
+
+  useEffect(() => {
+    if (isActive !== "About") {
+      setShowLoader(false);
+      return;
+    }
+    const timeout = setTimeout(() => {
+      setShowLoader(true);
+    }, 8600);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [isActive]);
+
   return (
     <div className="hero-wrapper">
       <motion.div
@@ -80,7 +96,7 @@ const Hero: React.FC = () => {
             <motion.div
               className="hero-box-bg"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { delay: 1 } }}
+              animate={{ opacity: 1, transition: { delay: 1.7, duration: 2 } }}
             >
               <div className="text">
                 <motion.img
@@ -88,7 +104,7 @@ const Hero: React.FC = () => {
                   src={Text1}
                   alt=""
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, transition: { delay: 1.5 } }}
+                  animate={{ opacity: 1, transition: { delay: 4.5, duration: 1 } }}
                 />
                 <div className="flex">
                   <motion.img
@@ -96,14 +112,14 @@ const Hero: React.FC = () => {
                     src={All}
                     alt=""
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1, transition: { delay: 1.8, duration: 1.5 } }}
+                    animate={{ opacity: 1, transition: { delay: 5.5, duration: 1.5 } }}
                   />
                   <motion.img
                     className="way"
                     src={The}
                     alt=""
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1, transition: { delay: 2.2, duration: 1.5 } }}
+                    animate={{ opacity: 1, transition: { delay: 6.5, duration: 0.7 } }}
                   />
                   <motion.img
                     className="way"
@@ -111,7 +127,7 @@ const Hero: React.FC = () => {
                     alt=""
                     style={{ marginTop: "15px" }}
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1, transition: { delay: 2.6, duration: 1.5 } }}
+                    animate={{ opacity: 1, transition: { delay: 6.6, duration: 0.7 } }}
                   />
                 </div>
               </div>
@@ -124,13 +140,16 @@ const Hero: React.FC = () => {
           >
             CLICK ANYWHERE TO DOWNLOAD COMPANY PROFILE
           </motion.p>
-          <motion.div
-            className="loading-content"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { delay: 1 } }}
-          >
-            <Loading setIsActive={setIsActive} />
-          </motion.div>
+          {showLoader && (
+            <motion.div
+              className="loading-content"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}
+            >
+              <Loading setIsActive={setIsActive} />
+            </motion.div>
+          )}
+
           <motion.div
             className="loader"
             initial={{ opacity: 1 }}

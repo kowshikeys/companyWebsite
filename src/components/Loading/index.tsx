@@ -24,7 +24,7 @@ const Loading: React.FC<ILoading> = ({ setIsActive }) => {
   useEffect(() => {
     if (progressValueRef.current) {
       const progressEndValue = 100;
-      const speed = 100;
+      const speed = 50; // TIMER SPEED IN MILLISECOND
 
       const progress = setInterval(() => {
         setProgressStartValue((prevValue) => {
