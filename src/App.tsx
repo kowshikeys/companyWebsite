@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import NotFound from "./Pages/NotFound";
 import Response from "./components/Response";
 import Home from "./Pages/Home";
+import CommingSoon from "./Pages/Blog";
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -23,6 +24,7 @@ const App: React.FC = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="*" element={<NotFound />} />
+      <Route path="/blog" element={<CommingSoon />} />
     </Routes>
   );
 };

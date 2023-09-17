@@ -1,11 +1,14 @@
 import React from "react";
 import Not from "../../assets/images/Bar.svg";
 import "./NotFound.scss";
+import { Link } from "react-router-dom";
 
 const NotFound: React.FC = () => {
   return (
     <div className="notFound">
-      <img src={Not} alt="" />
+      <Link to="/">
+        <img src={Not} alt="" />
+      </Link>
     </div>
   );
 };
