@@ -16,7 +16,7 @@ import "slick-carousel/slick/slick-theme.css";
 import All from "../../assets/images/All.svg";
 import The from "../../assets/images/the.svg";
 import Way from "../../assets/images/way.svg";
-import video from "../../assets/images/video.mp4";
+import Game from "../../assets/images/game.mp4";
 import { motion } from "framer-motion";
 
 const settings = {
@@ -29,7 +29,7 @@ const settings = {
   cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
   touchThreshold: 100,
   arrows: false,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 4000,
 };
 
 const Hero: React.FC = () => {
@@ -91,7 +91,11 @@ const Hero: React.FC = () => {
           <motion.div
             className="hero-box"
             initial={{ opacity: 0, marginTop: "0" }}
-            animate={{ opacity: 1, marginTop: "20px", transition: { duration: 1 } }}
+            animate={{
+              opacity: 1,
+              marginTop: "20px",
+              transition: { duration: 1 },
+            }}
           >
             <motion.div
               className="hero-box-bg"
@@ -104,7 +108,10 @@ const Hero: React.FC = () => {
                   src={Text1}
                   alt=""
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, transition: { delay: 4.5, duration: 1 } }}
+                  animate={{
+                    opacity: 1,
+                    transition: { delay: 4.5, duration: 1 },
+                  }}
                 />
                 <div className="flex">
                   <motion.img
@@ -112,14 +119,20 @@ const Hero: React.FC = () => {
                     src={All}
                     alt=""
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1, transition: { delay: 5.5, duration: 1.5 } }}
+                    animate={{
+                      opacity: 1,
+                      transition: { delay: 5.5, duration: 1.5 },
+                    }}
                   />
                   <motion.img
                     className="way"
                     src={The}
                     alt=""
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1, transition: { delay: 6.5, duration: 0.7 } }}
+                    animate={{
+                      opacity: 1,
+                      transition: { delay: 6.5, duration: 0.7 },
+                    }}
                   />
                   <motion.img
                     className="way"
@@ -127,7 +140,10 @@ const Hero: React.FC = () => {
                     alt=""
                     style={{ marginTop: "15px" }}
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1, transition: { delay: 6.6, duration: 0.7 } }}
+                    animate={{
+                      opacity: 1,
+                      transition: { delay: 6.6, duration: 0.7 },
+                    }}
                   />
                 </div>
               </div>
@@ -136,9 +152,13 @@ const Hero: React.FC = () => {
           <motion.p
             className="request"
             initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0, transition: { delay: 1, duration: 2 } }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { delay: 1, duration: 2 },
+            }}
           >
-            CLICK ANYWHERE TO DOWNLOAD COMPANY PROFILE
+            CLICK ANYWHERE TO PLACE A SERVICE REQUEST
           </motion.p>
           {showLoader && (
             <motion.div
@@ -189,27 +209,55 @@ const Hero: React.FC = () => {
               <div className="slider-carousel">
                 <Slider {...settings}>
                   <div className="slider-card-content">
-                    <p>BEST SERVICE WE’RE EVER COME ACROSS 1</p>
-                    <h5>BEST SERVICE WE’RE EVER COME ACROSS</h5>
+                    <p>
+                      I noticed a huge gap when it came to good service delivery
+                      in the market , agencyAadu is my response to bridging this
+                      gap .
+                    </p>
+                    <h5>FREDRIK PARKER</h5>
                   </div>
                   <div className="slider-card-content">
-                    <p>BEST SERVICE WE’RE EVER COME ACROSS 2</p>
-                    <h5>BEST SERVICE WE’RE EVER COME ACROSS</h5>
+                    <p>
+                      絶対的なプロフェッショナルであるagencyAaduとの取引に際し、私たちが示してくれた多大な敬意に心から感謝しています。
+                    </p>
+                    <h5>HIROTO HAYASHI</h5>
                   </div>
                   <div className="slider-card-content">
-                    <p>BEST SERVICE WE’RE EVER COME ACROSS 3</p>
-                    <h5>BEST SERVICE WE’RE EVER COME ACROSS</h5>
+                    <p style={{ paddingTop: "35px" }}>每次都准时！</p>
+                    <h5>XIAO MA</h5>
+                  </div>
+                  <div className="slider-card-content">
+                    <p>
+                      우리가 원하는 것을 시각화할 수 있어서 기뻤습니다. 이는
+                      고객이 필요로 하고 좋아하는 디자인을 맞춤화하는 데 큰
+                      도움이 되었습니다.
+                    </p>
+                    <h5>PARK TAE - JOON</h5>
+                  </div>
+                  <div className="slider-card-content">
+                    <p>
+                      Polite , Patient and made sure our requirement was
+                      understood before beginning production
+                    </p>
+                    <h5>SUZZANE KOZACK</h5>
+                  </div>
+                  <div className="slider-card-content">
+                    <p>
+                      Every step we made was documented , would certainly insist
+                      that you work for a month to see for yourself
+                    </p>
+                    <h5>JEFF BAKER</h5>
                   </div>
                 </Slider>
               </div>
             </div>
             <div className="box2">
               <video autoPlay loop muted>
-                <source src={video} type="video/mp4" />
+                <source src={Game} type="video/mp4" />
               </video>
             </div>
           </div>
-          <p className="request">CLICK ANYWHERE TO DOWNLOAD COMPANY PROFILE</p>
+          <p className="request">CLICK ANYWHERE TO PLACE A SERVICE REQUEST</p>
         </>
       )}
 
