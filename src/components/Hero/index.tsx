@@ -1,13 +1,10 @@
 import React, { useEffect } from "react";
 import Text1 from "../../assets/images/Handheld..svg";
-import Text2 from "../../assets/images/All the way..svg";
 import "./Hero.scss";
-import Logo from "../../assets/icons/Logo.svg";
 import Moon from "../../assets/icons/moon.svg";
 import { useState } from "react";
 import "../Header/Header.scss";
 import { Link } from "react-router-dom";
-import Blog from "../Blog";
 import Logohover from "../../assets/icons/Logohover.svg";
 import Loading from "../Loading";
 import Slider from "react-slick";
@@ -86,12 +83,13 @@ const Hero: React.FC = () => {
           <img src={Moon} alt="" />
         </div>
       </motion.div>
-      <a
-        href="https://survey.qwary.com/form/S_wSzSPnasH9Wc_FT15X0J1BuEcPl5gIB0kGxc-dgSo="
-        target="_blank"
-      >
-        {isActive === "About" && (
-          <div className="about-wrapper">
+
+      {isActive === "About" && (
+        <div className="about-wrapper">
+          <a
+            href="https://survey.qwary.com/form/S_wSzSPnasH9Wc_FT15X0J1BuEcPl5gIB0kGxc-dgSo="
+            target="_blank"
+          >
             <motion.div
               className="hero-box"
               initial={{ opacity: 0, marginTop: "0" }}
@@ -156,37 +154,37 @@ const Hero: React.FC = () => {
                 </div>
               </motion.div>
             </motion.div>
+          </a>
 
-            <motion.p
-              className="request"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: { delay: 1, duration: 2 },
-              }}
-            >
-              CLICK ANYWHERE TO PLACE A SERVICE REQUEST
-            </motion.p>
+          <motion.p
+            className="request"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { delay: 1, duration: 2 },
+            }}
+          >
+            CLICK ANYWHERE TO PLACE A SERVICE REQUEST
+          </motion.p>
 
-            {showLoader && (
-              <motion.div
-                className="loading-content"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}
-              >
-                <Loading setIsActive={setIsActive} />
-              </motion.div>
-            )}
-
+          {showLoader && (
             <motion.div
-              className="loader"
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 0, transition: { delay: 1 } }}
-            ></motion.div>
-          </div>
-        )}
-      </a>
+              className="loading-content"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}
+            >
+              <Loading setIsActive={setIsActive} />
+            </motion.div>
+          )}
+
+          <motion.div
+            className="loader"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0, transition: { delay: 1 } }}
+          ></motion.div>
+        </div>
+      )}
 
       {isActive === "Work" && (
         <>
