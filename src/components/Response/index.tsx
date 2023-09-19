@@ -16,7 +16,7 @@ const Response: React.FC = () => {
           <p>Company Profile</p>
         </div>
         <div className="profile">
-          <p>Protfolio</p>
+          <p>Portfolio</p>
         </div>
       </div>
       <div className="footer">
