@@ -9,17 +9,17 @@ import Home from "./Pages/Home";
 import CommingSoon from "./Pages/Blog";
 
 const App: React.FC = () => {
-  useEffect(() => {
-    const refreshPage = () => {
-      window.location.reload();
-    };
+  // useEffect(() => {
+  //   const refreshPage = () => {
+  //     window.location.reload();
+  //   };
 
-    const interval = setInterval(refreshPage, 40 * 1000); // Refresh every 1 minute
+  //   const interval = setInterval(refreshPage, 40 * 1000); // Refresh every 1 minute
 
-    return () => {
-      clearInterval(interval); // Clear the interval when the component unmounts
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(interval); // Clear the interval when the component unmounts
+  //   };
+  // }, []);
   return (
     <Routes>
       <Route path="/" element={<Home />} />
