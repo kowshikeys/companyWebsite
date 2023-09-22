@@ -13,10 +13,14 @@ const Response: React.FC = () => {
         </div>
 
         <div className="company-title">
-          <p>Company Profile</p>
+          <a href="https://b.link/u2vu96" target="_blank" rel="noopener noreferrer">
+            <p>Service Request</p>
+          </a>
         </div>
         <div className="profile">
-          <p>Portfolio</p>
+          <a href="/" download>
+            <p>Quality Reference</p>
+          </a>
         </div>
       </div>
       <div className="footer">

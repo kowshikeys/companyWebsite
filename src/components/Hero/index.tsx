@@ -188,7 +188,7 @@ const Hero: React.FC = () => {
       )}
 
       {isActive === "Work" && (
-        <>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 2 } }}>
           <a
             href="https://survey.qwary.com/form/S_wSzSPnasH9Wc_FT15X0J1BuEcPl5gIB0kGxc-dgSo="
             target="_blank"
@@ -269,7 +269,7 @@ const Hero: React.FC = () => {
                   onEnded={() => {
                     setTimeout(() => {
                       window.location.reload();
-                    }, 2000);
+                    }, 3000);
                   }}
                 >
                   <source src={Game} type="video/mp4" />
@@ -280,7 +280,7 @@ const Hero: React.FC = () => {
           <p className="request" style={{ textDecoration: "none" }}>
             CLICK ANYWHERE TO PLACE A SERVICE REQUEST
           </p>
-        </>
+        </motion.div>
       )}
 
       {isActive === "Blog" && (

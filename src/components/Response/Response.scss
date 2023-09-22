@@ -37,6 +37,12 @@
       border: 1px solid black;
       border-radius: 5px;
       padding: 10px;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
       p {
         letter-spacing: 2px;
         font-size: 35px;
@@ -45,10 +51,13 @@
     .profile {
       color: #807e7b;
       width: 190px;
-      height: 46px;
       border: 1px solid black;
       border-radius: 5px;
-      padding: 5px 5px 5px 15px;
+      padding: 10px;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
       p {
         font-family: "Walkway-Black";
         letter-spacing: 2px;
