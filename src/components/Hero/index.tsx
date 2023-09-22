@@ -55,8 +55,9 @@ const Hero: React.FC = () => {
         animate={{ opacity: 1, y: 0, transition: { delay: 1, duration: 2 } }}
       >
         <div className="logo">
-          <img className="logo1" src={Logohover} alt="" />
-          {/* <img className="logohover" src={Logohover} alt="" /> */}
+          <Link to="/">
+            <img className="logo1" src={Logohover} alt="" />
+          </Link>
         </div>
         <div className="navbar-content">
           <div
