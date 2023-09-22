@@ -223,9 +223,8 @@ const Hero: React.FC = () => {
                   <Slider {...settings}>
                     <div className="slider-card-content">
                       <p>
-                        I noticed a huge gap when it came to good service
-                        delivery in the market , agencyAadu is my response to
-                        bridging this gap .
+                        I noticed a huge gap when it came to good service delivery in the market ,
+                        agencyAadu is my response to bridging this gap .
                       </p>
                       <h5>FREDRIK PARKER</h5>
                     </div>
@@ -241,23 +240,22 @@ const Hero: React.FC = () => {
                     </div>
                     <div className="slider-card-content">
                       <p>
-                        우리가 원하는 것을 시각화할 수 있어서 기뻤습니다. 이는
-                        고객이 필요로 하고 좋아하는 디자인을 맞춤화하는 데 큰
-                        도움이 되었습니다.
+                        우리가 원하는 것을 시각화할 수 있어서 기뻤습니다. 이는 고객이 필요로 하고
+                        좋아하는 디자인을 맞춤화하는 데 큰 도움이 되었습니다.
                       </p>
                       <h5>PARK TAE - JOON</h5>
                     </div>
                     <div className="slider-card-content">
                       <p>
-                        Polite , Patient and made sure our requirement was
-                        understood before beginning production
+                        Polite , Patient and made sure our requirement was understood before
+                        beginning production
                       </p>
                       <h5>SUZZANE KOZACK</h5>
                     </div>
                     <div className="slider-card-content">
                       <p>
-                        Every step we made was documented , would certainly
-                        insist that you work for a month to see for yourself
+                        Every step we made was documented , would certainly insist that you work for
+                        a month to see for yourself
                       </p>
                       <h5>JEFF BAKER</h5>
                     </div>
@@ -265,7 +263,15 @@ const Hero: React.FC = () => {
                 </div>
               </div>
               <div className="box2">
-                <video autoPlay loop muted>
+                <video
+                  autoPlay
+                  muted
+                  onEnded={() => {
+                    setTimeout(() => {
+                      window.location.reload();
+                    }, 2000);
+                  }}
+                >
                   <source src={Game} type="video/mp4" />
                 </video>
               </div>
