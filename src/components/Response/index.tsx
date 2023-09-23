@@ -2,6 +2,7 @@ import React from "react";
 import Icon from "../../assets/images/Icon.svg";
 import Footer from "../../assets/images/Footer.svg";
 import "./Response.scss";
+import video from "../../assets/download-video.mp4";
 
 const Response: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const Response: React.FC = () => {
           </a>
         </div>
         <div className="profile">
-          <a href="/" download>
+          <a href={video} download>
             <p>Quality Reference</p>
           </a>
         </div>
