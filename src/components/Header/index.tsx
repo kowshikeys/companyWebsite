@@ -25,7 +25,6 @@ const Header: React.FC = () => {
           <div>
             <p>BLOG</p>
           </div>
-
           <img src={Moon} alt="" />
         </div>
       </motion.div>

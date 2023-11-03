@@ -7,7 +7,7 @@
   flex-direction: column;
   // max-width: 55%;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;        Commenting it out for tooltip visibility
 
   .loader {
     position: absolute;
@@ -81,23 +81,27 @@
         right: 20px;
         top: 50%;
         transform: translateY(-50%);
+        background: transparent;
 
         .flex {
           display: flex;
           align-items: center;
           justify-content: flex-end;
           gap: 7px;
+          background: transparent;
 
           img {
             height: 30px;
             object-fit: contain;
             width: fit-content;
+            background: transparent;
           }
         }
 
         .hand {
           width: 280px;
           animation: fadeIn 6s;
+          background: transparent;
         }
         // @keyframes fadeIn {
         //   0% {
@@ -113,6 +117,7 @@
         .way {
           width: 180px;
           animation: fadeOut 9s;
+          background: transparent;
         }
       }
     }
@@ -203,10 +208,10 @@
 }
 
 .logo1 {
-  opacity: 0.3;
+  opacity: 1;
   transition: opacity 200ms ease-in;
 
-  &:hover {
-    opacity: 0.8;
-  }
+  // &:hover {
+  //   opacity: 0.8;
+  // }
 }

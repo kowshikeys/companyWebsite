@@ -1,16 +1,29 @@
 import React from "react";
-import Blog from "../../assets/images/blog.svg";
 import "./Blog.scss";
-import { Link } from "react-router-dom";
+import BlogPage from "../../components/BlogPage";
+import Footer from "../../components/Footer";
+import Response from "../../components/Response";
+import { useMediaQuery } from "usehooks-ts";
 
-const CommingSoon: React.FC = () => {
+const Blog = () => {
+  const isTab = useMediaQuery("(max-width:768px)");
+
   return (
-    <div className="comingSoon">
-      <Link to="/">
-        <img src={Blog} alt="" />
-      </Link>
+    <div>
+      {!isTab ? (
+        <>
+          <section>
+            <div className="blog-app">
+              <BlogPage />
+            </div>
+            <Footer />
+          </section>
+        </>
+      ) : (
+        <Response />
+      )}
     </div>
   );
 };
 
-export default CommingSoon;
+export default Blog;

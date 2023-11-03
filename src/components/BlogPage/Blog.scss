@@ -1,0 +1,87 @@
+.BlogPage-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 16/12;
+    position: relative;
+
+    .navbar-content {
+        .nav {
+            &.active {
+                p {
+                    color: var(--black-color);
+                }
+            }
+            &:hover {
+                color: var(--black-color);
+            }
+            a {
+                color: #d9d9d9;
+                text-decoration: none;
+                &:hover {
+                    color: var(--black-color);
+                }
+            }
+        }
+    }
+    .blogPost {
+        padding-top: 9rem;
+        max-width: 25rem;
+        margin: 0 auto;
+        .post {
+            margin-bottom: 6rem;
+            cursor: default;
+            .link {
+                text-decoration: none;
+                .title {
+                    margin-bottom: 0.7rem;
+                    cursor: pointer;
+                    h3 {
+                        color: var(--blogpageHeading-goathoof-color);
+                        font-family: DMSerifDisplay-Regular;
+                        font-size: 2.3rem;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        text-transform: capitalize;
+                        text-decoration: underline;
+                        transition: 1.2s ease;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .summary {
+                color: var(--black-color);
+                font-family: Walkway-Bold;
+                letter-spacing: 0.04rem;
+                font-size: 0.8rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+            .info {
+                margin-top: 0.75rem;
+                display: flex;
+                flex-direction: row;
+                gap: 12px;
+                p {
+                    color: var(--black-color);
+                    font-family: Walkway-Bold;
+                    font-size: 0.72rem;
+                    letter-spacing: 0.03rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    // &:hover {
+                    //     text-decoration: underline;
+                    // }
+                    .info-icon {
+                        transform: translateY(1px);
+                    }
+                }
+            }
+        }
+    }
+}

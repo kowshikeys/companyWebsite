@@ -15,6 +15,7 @@ import The from "../../assets/images/the.svg";
 import Way from "../../assets/images/way.svg";
 import Game from "../../assets/images/game.mp4";
 import { motion } from "framer-motion";
+// import Tooltip from "../Tooltip";
 
 const settings = {
   dots: false,
@@ -30,6 +31,21 @@ const settings = {
 };
 
 const Hero: React.FC = () => {
+
+  // ================= DARK-MODE =================
+  const [theme, setTheme] = useState("light-theme");
+  
+  const toggleTheme = () => {
+    if (theme === "dark-theme") {
+      setTheme("light-theme");
+    } else {
+      setTheme("dark-theme");
+    }
+  }
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   const [isActive, setIsActive] = useState("About");
   const [showLoader, setShowLoader] = useState(false);
 
@@ -80,8 +96,9 @@ const Hero: React.FC = () => {
               <p>BLOG</p>
             </Link>
           </div>
-
-          <img src={Moon} alt="" />
+          {/* <Tooltip text={"work in progress"}> */}
+          <img src={Moon} alt="" onClick={() => toggleTheme()} />
+          {/* </Tooltip> */}
         </div>
       </motion.div>
 
@@ -283,11 +300,11 @@ const Hero: React.FC = () => {
         </motion.div>
       )}
 
-      {isActive === "Blog" && (
+      {/* {isActive === "Blog" && (
         <div>
           <h1>Hello</h1>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
